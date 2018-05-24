@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | GraphJS</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A simple grammar to convert raw data into visual graphs"><meta property="og:type" content="website"><meta property="og:url" content="http://ivantha.me/GraphJS"><meta property="og:site_name" content="GraphJS"><meta property="og:title" content="GraphJS"><meta property="og:image" content="./Resources/Original/analytics_512.png"><meta property="og:description" content="A simple grammar to convert raw data into visual graphs"><meta property="og:author" content="https://twitter.com/OshanIvantha"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="GraphJS"><meta property="twitter:description" content="A simple grammar to convert raw data into visual graphs"><meta property="twitter:image" content="./Resources/Original/analytics_512.png"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/OshanIvantha/GraphJS"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graph.js~Graph.html">Graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#charts">charts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/chart-type.js~ChartType.html">ChartType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/chart.js~Chart.html">Chart</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#charts-types">charts/types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html">AreaChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/bar-chart.js~BarChart.html">BarChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/combination-chart.js~CombinationChart.html">CombinationChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/donut-chart.js~DonutChart.html">DonutChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/gauge-chart.js~GaugeChart.html">GaugeChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/line-chart-with-regions.js~LineChartWithRegions.html">LineChartWithRegions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/line-chart.js~LineChart.html">LineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/multiple-xy-line-chart.js~MultipleXYLineChart.html">MultipleXYLineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/pie-chart.js~PieChart.html">PieChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/scatter-plot.js~ScatterPlot.html">ScatterPlot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/simple-xy-line-chart.js~SimpleXYLineChart.html">SimpleXYLineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/spline-chart.js~SplineChart.html">SplineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/stacked-area-chart.js~StackedAreaChart.html">StackedAreaChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/stacked-bar-chart.js~StackedBarChart.html">StackedBarChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/step-chart.js~StepChart.html">StepChart</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#errors">errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors/invalid-grammar-error.js~InvalidGrammarError.html">InvalidGrammarError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors/invalid-operation-error.js~InvalidOperationError.html">InvalidOperationError</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#parsers">parsers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/csv-parser.js~CsvParser.html">CsvParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/json-parser.js~JsonParser.html">JsonParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/tsv-parser.js~TsvParser.html">TsvParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/txt-parser.js~TxtParser.html">TxtParser</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><p><img src="https://raw.githubusercontent.com/codezilla2018/GraphJS/master/Resources/Original/analytics_64.png" alt="GraphJS logo"> </p>
+<h2 id="graphjs">GraphJS</h2><p><a href="https://www.codacy.com/app/OshanIvantha/GraphJS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=OshanIvantha/GraphJS&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4eba90e2fb9c434d81180ea077e09b03" alt="Codacy Badge"></a> <a href="https://travis-ci.org/OshanIvantha/GraphJS"><img src="https://travis-ci.org/OshanIvantha/GraphJS.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/github/OshanIvantha/GraphJS?branch=master"><img src="https://coveralls.io/repos/github/OshanIvantha/GraphJS/badge.svg?branch=master" alt="Coverage Status"></a></p>
+<p>A javascript library written in ES6 for parsing a simple grammar which is fully complient with <a href="http://c3js.org/">C3.js</a>. </p>
+<p><a href="http://ivantha.me/graphjs-demo/">Demo</a> |
+<a href="http://ivantha.me/GraphJS/">API Documentation</a> |
+<a href="https://github.com/codezilla2018/GraphJS/tree/master/docs/docs">Developer documentation</a> |
+<a href="https://raw.githubusercontent.com/codezilla2018/GraphJS/master/CONTRIBUTING.md">Contributing</a> |
+<a href="https://raw.githubusercontent.com/codezilla2018/GraphJS/master/CODE_OF_CONDUCT.md">Code of Conduct</a> |</p>
+<p>The <a href="xxx">GraphJS</a> library is exported as a <a href="https://github.com/umdjs/umd">UMD</a> module.</p>
+<p>GraphJS is released under the <a href="https://raw.githubusercontent.com/codezilla2018/GraphJS/master/LICENSE">MIT license</a> &amp; supports modern environments.<br></p>
+<h2 id="gettings-started">Gettings Started</h2><h3 id="installation">Installation</h3><p>In a browser:</p>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;script src=&quot;graphjs.min.js&quot;&gt;&lt;/script&gt;</code>
+</code></pre>
+<p>Using npm:</p>
+<pre><code class="lang-shell"><code class="source-code prettyprint">$ npm i --save @ivantha/graphjs</code>
+</code></pre>
+<h3 id="usage">Usage</h3><p>1) Initialize a chart using the Graph class</p>
+<pre><code><code class="source-code prettyprint">let chart = new Graph(&quot;generate &lt;CHART_TYPE&gt; from &lt;JSON_DATASOURCE&gt;&quot;)</code>
+</code></pre><p>Chart type can be any one of,</p>
+<ul>
+<li>LINE_CHART</li>
+<li>SIMPLE_XY_LINE_CHART</li>
+<li>STEP_CHART</li>
+<li>BAR_CHART</li>
+<li>PIE_CHART</li>
+<li>COMBINATION_CHART</li>
+<li>MULTIPLE_XY_LINE_CHART</li>
+<li>AREA_CHART</li>
+<li>STACKED_BAR_CHART</li>
+<li>DONUT_CHART</li>
+<li>SPLINE_CHART</li>
+<li>LINE_CHART_WITH_REGIONS</li>
+<li>STACKED_AREA_CHART</li>
+<li>SCATTER_PLOT</li>
+<li>GUAGE_CHART</li>
+</ul>
+<p>2) Modify your chart using the suitable grammar</p>
+<pre><code><code class="source-code prettyprint">chart.do(&quot;hide tooltip&quot;)
+chart.do(&apos;set gridline x at 20 as another-x&apos;)</code>
+</code></pre><p>3) Export the JSON string of the chart using,</p>
+<pre><code><code class="source-code prettyprint">let jsonOut = chart.generateJson()</code>
+</code></pre><p>4) Generated JSON output is fully complient with the C3.js library</p>
+<pre><code><code class="source-code prettyprint">let chart = c3.generate(jsonOut)</code>
+</code></pre><h2 id="development">Development</h2><h4 id="npm-scripts">NPM scripts</h4><ul>
+<li><code>npm run esdoc</code>: Generate documentation</li>
+<li><code>npm run webpack</code>: Generate minified graphjs.min.js</li>
+<li><code>npm run babel</code>: Generate the compiled ES6 source files</li>
+<li><code>npm run build</code>: Build everything</li>
+<li><code>npm run clean</code>: Clean the build files</li>
+<li><code>npm run test</code>: Run all tests</li>
+</ul>
+<h3 id="built-with">Built With</h3><ul>
+<li><a href="">ES6</a></li>
+<li><a href="https://babeljs.io/">Babel</a> </li>
+<li><a href="https://webpack.js.org/">Webpack</a> </li>
+<li><a href="https://eslint.org/">ESLint</a> </li>
+<li><a href="https://esdoc.org/">ESDoc</a> </li>
+<li><a href="https://istanbul.js.org/">Istanbul</a> </li>
+<li><a href="https://mochajs.org/">Mocha</a> </li>
+<li><a href="http://www.chaijs.com/">Chai</a> </li>
+<li><a href="https://travis-ci.org/">TravisCI</a> </li>
+<li><a href="https://coveralls.io/">Coveralls.io</a></li>
+</ul>
+<h3 id="authors">Authors</h3><ul>
+<li><strong>Oshan Mudannayake</strong> - <em>Initial work</em> - <a href="https://github.com/OshanIvantha">OshanIvantha</a></li>
+</ul>
+<h3 id="acknowledgments">Acknowledgments</h3><ul>
+<li><p><div>Logo Icon made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></p>
+</li>
+</ul>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

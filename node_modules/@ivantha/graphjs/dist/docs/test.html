@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="">
+  <title data-ice="title">Test | GraphJS</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A simple grammar to convert raw data into visual graphs"><meta property="og:type" content="website"><meta property="og:url" content="http://ivantha.me/GraphJS"><meta property="og:site_name" content="GraphJS"><meta property="og:title" content="GraphJS"><meta property="og:image" content="./Resources/Original/analytics_512.png"><meta property="og:description" content="A simple grammar to convert raw data into visual graphs"><meta property="og:author" content="https://twitter.com/OshanIvantha"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="GraphJS"><meta property="twitter:description" content="A simple grammar to convert raw data into visual graphs"><meta property="twitter:image" content="./Resources/Original/analytics_512.png"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/OshanIvantha/GraphJS"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graph.js~Graph.html">Graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#charts">charts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/chart-type.js~ChartType.html">ChartType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/chart.js~Chart.html">Chart</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#charts-types">charts/types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html">AreaChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/bar-chart.js~BarChart.html">BarChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/combination-chart.js~CombinationChart.html">CombinationChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/donut-chart.js~DonutChart.html">DonutChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/gauge-chart.js~GaugeChart.html">GaugeChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/line-chart-with-regions.js~LineChartWithRegions.html">LineChartWithRegions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/line-chart.js~LineChart.html">LineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/multiple-xy-line-chart.js~MultipleXYLineChart.html">MultipleXYLineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/pie-chart.js~PieChart.html">PieChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/scatter-plot.js~ScatterPlot.html">ScatterPlot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/simple-xy-line-chart.js~SimpleXYLineChart.html">SimpleXYLineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/spline-chart.js~SplineChart.html">SplineChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/stacked-area-chart.js~StackedAreaChart.html">StackedAreaChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/stacked-bar-chart.js~StackedBarChart.html">StackedBarChart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/charts/types/step-chart.js~StepChart.html">StepChart</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#errors">errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors/invalid-grammar-error.js~InvalidGrammarError.html">InvalidGrammarError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors/invalid-operation-error.js~InvalidOperationError.html">InvalidOperationError</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#parsers">parsers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/csv-parser.js~CsvParser.html">CsvParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/json-parser.js~JsonParser.html">JsonParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/tsv-parser.js~TsvParser.html">TsvParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parsers/txt-parser.js~TxtParser.html">TxtParser</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1>Test</h1>
+<table class="test-summary">
+  <thead>
+    <tr>
+      <td class="test-description">Description</td>
+      <td class="test-target">Identifier</td>
+    </tr>
+  </thead>
+
+  <tbody data-ice="tests"><tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber11"><p>Tests for Chart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html">Chart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-constructor-constructor">Chart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-constructor-constructor">Chart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber41"><p>should return false</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber53"><p>Test to check the do &quot;Grid Lines&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber54"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber132"><p>Test to check the do &quot;Tooltip&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber133"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber210"><p>Test to check the do &quot;Chart size&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber211"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber288"><p>Test to check the do &quot;Legend&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber289"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber366"><p>Test to check the do &quot;Interaction&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber367"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber444"><p>Test to check the do &quot;Rotate axis&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber445"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber521"><p>Test to check the do &quot;Axis labels&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber522"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber599"><p>Test to check the do &quot;Axis boundaries&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber600"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber677"><p>Test to check the do &quot;Data labels&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber678"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber758"><p>Test to check the do &quot;Line Chart hide points&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber759"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber835"><p>Test to check the do &quot;Optional Grid Lines&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-do">Chart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber836"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber923"><p>Test to check the generateJson function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/chart.js~Chart.html#instance-method-generateJson">Chart#generateJson</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/chart.spec.js.html#lineNumber924"><p>should return default output json</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber11"><p>Tests for AreaChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html">AreaChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html#instance-constructor-constructor">AreaChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html#instance-constructor-constructor">AreaChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html#instance-method-do">AreaChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;Area type&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html#instance-method-do">AreaChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/area-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber11"><p>Tests for BarChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/bar-chart.js~BarChart.html">BarChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/bar-chart.js~BarChart.html#instance-constructor-constructor">BarChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/bar-chart.js~BarChart.html#instance-constructor-constructor">BarChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/bar-chart.js~BarChart.html#instance-method-do">BarChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/bar-chart.js~BarChart.html#instance-method-do">BarChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/bar-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber11"><p>Tests for DonutChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/donut-chart.js~DonutChart.html">DonutChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/donut-chart.js~DonutChart.html#instance-constructor-constructor">DonutChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/donut-chart.js~DonutChart.html#instance-constructor-constructor">DonutChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/donut-chart.js~DonutChart.html#instance-method-do">DonutChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;Set title&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/donut-chart.js~DonutChart.html#instance-method-do">DonutChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/donut-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/line-chart.spec.js.html#lineNumber11"><p>Tests for LineChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/line-chart.js~LineChart.html">LineChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/line-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/line-chart.js~LineChart.html#instance-constructor-constructor">LineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/line-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/line-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/line-chart.js~LineChart.html#instance-constructor-constructor">LineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/line-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber11"><p>Tests for MultipleXYLineChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/multiple-xy-line-chart.js~MultipleXYLineChart.html">MultipleXYLineChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/multiple-xy-line-chart.js~MultipleXYLineChart.html#instance-constructor-constructor">MultipleXYLineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/multiple-xy-line-chart.js~MultipleXYLineChart.html#instance-constructor-constructor">MultipleXYLineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/multiple-xy-line-chart.js~MultipleXYLineChart.html#instance-method-do">MultipleXYLineChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;Axis data mapping&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/multiple-xy-line-chart.js~MultipleXYLineChart.html#instance-method-do">MultipleXYLineChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/multiple-xy-line-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/pie-chart.spec.js.html#lineNumber11"><p>Tests for PieChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/pie-chart.js~PieChart.html">PieChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/pie-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/line-chart.js~LineChart.html#instance-constructor-constructor">LineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/pie-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/pie-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/line-chart.js~LineChart.html#instance-constructor-constructor">LineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/pie-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/scatter-plot.spec.js.html#lineNumber11"><p>Tests for ScatterPlot class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/scatter-plot.js~ScatterPlot.html">ScatterPlot</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/scatter-plot.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/scatter-plot.js~ScatterPlot.html#instance-constructor-constructor">ScatterPlot#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/scatter-plot.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/scatter-plot.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/scatter-plot.js~ScatterPlot.html#instance-constructor-constructor">ScatterPlot#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/scatter-plot.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber11"><p>Tests for SimpleXYLineChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/simple-xy-line-chart.js~SimpleXYLineChart.html">SimpleXYLineChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/simple-xy-line-chart.js~SimpleXYLineChart.html#instance-constructor-constructor">SimpleXYLineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/simple-xy-line-chart.js~SimpleXYLineChart.html#instance-constructor-constructor">SimpleXYLineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/area-chart.js~AreaChart.html#instance-method-do">AreaChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;X axis data label&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/simple-xy-line-chart.js~SimpleXYLineChart.html#instance-method-do">SimpleXYLineChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/simple-xy-line-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/spline-chart.spec.js.html#lineNumber11"><p>Tests for SplineChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/spline-chart.js~SplineChart.html">SplineChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/spline-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/spline-chart.js~SplineChart.html#instance-constructor-constructor">SplineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/spline-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/spline-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/spline-chart.js~SplineChart.html#instance-constructor-constructor">SplineChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/spline-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber11"><p>Tests for StackedAreaChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-area-chart.js~StackedAreaChart.html">StackedAreaChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-area-chart.js~StackedAreaChart.html#instance-constructor-constructor">StackedAreaChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-area-chart.js~StackedAreaChart.html#instance-constructor-constructor">StackedAreaChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-area-chart.js~StackedAreaChart.html#instance-method-do">StackedAreaChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-area-chart.js~StackedAreaChart.html#instance-method-do">StackedAreaChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-area-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber11"><p>Tests for StackedBarChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-bar-chart.js~StackedBarChart.html">StackedBarChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-bar-chart.js~StackedBarChart.html#instance-constructor-constructor">StackedBarChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-bar-chart.js~StackedBarChart.html#instance-constructor-constructor">StackedBarChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-bar-chart.js~StackedBarChart.html#instance-method-do">StackedBarChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/stacked-bar-chart.js~StackedBarChart.html#instance-method-do">StackedBarChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/stacked-bar-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber11"><p>Tests for StepChart class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/step-chart.js~StepChart.html">StepChart</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber17"><p>Test to check the constructor behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/step-chart.js~StepChart.html#instance-constructor-constructor">StepChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber18"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber29"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/step-chart.js~StepChart.html#instance-constructor-constructor">StepChart#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber30"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber40"><p>Test to check the do function behaviour with invalid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/step-chart.js~StepChart.html#instance-method-do">StepChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber41"><p>should throw an InvalidGrammarError</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber55"><p>Test to check the do &quot;&quot; function behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/charts/types/step-chart.js~StepChart.html#instance-method-do">StepChart#do</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/charts/types/step-chart.spec.js.html#lineNumber56"><p>should generate the expected JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/errors/invalid-grammar-error.spec.js.html#lineNumber7"><p>Tests for InvalidGrammarError class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/errors/invalid-grammar-error.js~InvalidGrammarError.html">InvalidGrammarError</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/errors/invalid-grammar-error.spec.js.html#lineNumber13"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/errors/invalid-grammar-error.js~InvalidGrammarError.html#instance-constructor-constructor">InvalidGrammarError#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/errors/invalid-grammar-error.spec.js.html#lineNumber14"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/errors/invalid-operation-error.spec.js.html#lineNumber7"><p>Tests for InvalidOperationError class</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/errors/invalid-operation-error.js~InvalidOperationError.html">InvalidOperationError</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/test/errors/invalid-operation-error.spec.js.html#lineNumber13"><p>Test to check the constructor behaviour with valid data</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/errors/invalid-operation-error.js~InvalidOperationError.html#instance-constructor-constructor">InvalidOperationError#constructor</a></span></td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/errors/invalid-operation-error.spec.js.html#lineNumber14"><p>should do nothing</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

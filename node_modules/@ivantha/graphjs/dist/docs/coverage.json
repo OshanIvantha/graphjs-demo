@@ -1,0 +1,138 @@
+{
+  "coverage": "88.88%",
+  "expectCount": 72,
+  "actualCount": 64,
+  "files": {
+    "src/charts/chart-type.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/charts/chart.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        1,
+        8,
+        11
+      ]
+    },
+    "src/charts/types/area-chart.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/charts/types/bar-chart.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/charts/types/combination-chart.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/charts/types/donut-chart.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/charts/types/gauge-chart.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/charts/types/line-chart-with-regions.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/charts/types/line-chart.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/charts/types/multiple-xy-line-chart.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/charts/types/pie-chart.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/charts/types/scatter-plot.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/charts/types/simple-xy-line-chart.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/charts/types/spline-chart.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/charts/types/stacked-area-chart.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/charts/types/stacked-bar-chart.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/charts/types/step-chart.js": {
+      "expectCount": 5,
+      "actualCount": 3,
+      "undocumentLines": [
+        25,
+        29
+      ]
+    },
+    "src/errors/invalid-grammar-error.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/errors/invalid-operation-error.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/graph.js": {
+      "expectCount": 13,
+      "actualCount": 10,
+      "undocumentLines": [
+        121,
+        122,
+        123
+      ]
+    },
+    "src/parsers/csv-parser.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/parsers/json-parser.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/parsers/tsv-parser.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/parsers/txt-parser.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    }
+  }
+}
