@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GraphJS Demo</title>
+
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--D3-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+
+    <!--C3-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.1/c3.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.1/c3.min.js"></script>
+
+    <!--GraphJS-->
+    <script src="node_modules/@ivantha/graphjs/dist/browser/graphjs.min.js"></script>
+
+    <!--Styles-->
+    <link type="text/css" href="styles.css">
+</head>
+<body>
+    <div>
+        <textarea id="grammar-textarea" rows="20" cols="150"></textarea>
+    </div>
+    <button id="draw-button">Draw</button>
+    <br>
+    <br>
+    <label>Try these commands in order to test GraphJS</label>
+    <ol>
+        <li>
+            generate LINE_CHART for { "data1": [30, 20, 50, 40, 60, 50], "data2": [200, 130, 90, 240, 130, 220], "data3": [300, 200, 160, 400, 250, 250] }
+        </li>
+        <li>
+            enable rotate
+        </li>
+        <li>
+            Refresh to start over
+        </li>
+    </ol>
+    <br>
+
+    <div id="chart"></div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
